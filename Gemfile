@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.4.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails'
 # Use Postgres for the database
-gem 'pg', '>= 0.14.1'
+gem 'pg', '~> 0.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -53,7 +53,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'RedCloth'
+  gem 'RedCloth', '4.3.2'
 end
 
 group :test do
