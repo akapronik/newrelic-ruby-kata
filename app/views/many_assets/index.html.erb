@@ -4,10 +4,9 @@
   <p>Hint: Use transaction traces to see where it is spending time.</p>
 </div>
 
-<% @num_high.times do |i| -%>
-  <% @num_wide.times do |j| -%>
-    <% icon = @icons[i*@num_wide + j] -%>
-    <img src='<%= "/many_assets/display/#{icon.id}.ico" %>' width='16' height='16' title='<%= icon.web_site.url %>'>
+<% @icons.each_with_index do |icon, index| -%>
+  <%= ('<img width="16" height="16" src="data:image/jpg;base64,%s">' % Base64.encode64(icon.icon)).html_safe %>
+  <% if (index + 1) % @num_high == 0 %>
+    <br>
   <% end -%>
-  <br>
 <% end %>
